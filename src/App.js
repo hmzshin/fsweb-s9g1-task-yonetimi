@@ -38,7 +38,7 @@ function App() {
       }
     });
     setTasks(copyTasks);
-    toast.success("Tebrikler!, " + title + " görevini tamaladın");
+    toast.success("Tebrikler!, " + title + " görevini tamamladın");
   }
 
   return (

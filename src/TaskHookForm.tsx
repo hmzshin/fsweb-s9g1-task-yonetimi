@@ -21,7 +21,7 @@ export default function TaskHookForm({ kisiler, submitFn }) {
     mode: "all",
   });
 
-  function onSubmitHandler(formData) {
+  function onSubmitHandler(formData: any) {
     console.log("form data : ", formData);
 
     submitFn({
