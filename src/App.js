@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./app.css";
 import Task from "./Task";
 import TaskForm from "./TaskForm";
-import TaskHookForm from "./TaskHookForm";
+import TaskHookForm from "./TaskHookForm.tsx";
 import PeopleForm from "./PeopleForm";
 import { initialTasks, initialTeam } from "./data";
 import { Slide, ToastContainer, Zoom, toast } from "react-toastify";

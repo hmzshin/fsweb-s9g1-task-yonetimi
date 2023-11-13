@@ -39,7 +39,7 @@ export default function TaskHookForm({ kisiler, submitFn }) {
         <input
           className="input-text"
           id="title"
-          name="title"
+
           type="text"
           {...register("title", {
             required: "Görev başlığı boş bırakılamaz",
@@ -58,9 +58,9 @@ export default function TaskHookForm({ kisiler, submitFn }) {
         </label>
         <textarea
           className="input-textarea"
-          rows="3"
+         
           id="description"
-          name="description"
+          
           {...register("description", {
             required: "Görev açıklaması zorunludur.",
             minLength: {
@@ -75,17 +75,17 @@ export default function TaskHookForm({ kisiler, submitFn }) {
       <div className="form-line">
         <label className="input-label">İnsanlar</label>
         <div>
-          {kisiler.map((p) => (
-            <label className="input-checkbox" key={p}>
+          {kisiler.map((parameter:any) => (
+            <label className="input-checkbox" key={parameter}>
               <input
                 type="checkbox"
-                name="people"
-                value={p}
+                
+                value={parameter}
                 {...register("people", {
                   required: "Görev ataması için bir kişi seçiniz",
                 })}
               />
-              {p}
+              {parameter}
             </label>
           ))}
         </div>
@@ -93,6 +93,7 @@ export default function TaskHookForm({ kisiler, submitFn }) {
       </div>
 
       <div className="form-line">
+       
         <button className="submit-button" type="submit" disabled={!isValid}>
           Kaydet
         </button>
