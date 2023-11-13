@@ -42,10 +42,10 @@ export default function TaskHookForm({ kisiler, submitFn }) {
           name="title"
           type="text"
           {...register("title", {
-            required: "Ürün adı alanı zorunludur.",
+            required: "Görev başlığı boş bırakılamaz",
             minLength: {
               value: 3,
-              message: "İsim üç karakterden az olamaz!",
+              message: "Görev adı 3 harften az olamaz",
             },
           })}
         />
@@ -62,10 +62,10 @@ export default function TaskHookForm({ kisiler, submitFn }) {
           id="description"
           name="description"
           {...register("description", {
-            required: "Ürün adı alanı zorunludur.",
+            required: "Görev açıklaması zorunludur.",
             minLength: {
-              value: 3,
-              message: "İsim üç karakterden az olamaz!",
+              value: 10,
+              message: "Açıklama 10 karakterden az olamaz!",
             },
           })}
         ></textarea>
@@ -82,7 +82,7 @@ export default function TaskHookForm({ kisiler, submitFn }) {
                 name="people"
                 value={p}
                 {...register("people", {
-                  required: "Ürün adı alanı zorunludur.",
+                  required: "Görev ataması için bir kişi seçiniz",
                 })}
               />
               {p}
