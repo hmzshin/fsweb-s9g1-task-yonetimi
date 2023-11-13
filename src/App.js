@@ -5,7 +5,7 @@ import TaskForm from "./TaskForm";
 import TaskHookForm from "./TaskHookForm";
 import PeopleForm from "./PeopleForm";
 import { initialTasks, initialTeam } from "./data";
-import { ToastContainer, Zoom, toast } from "react-toastify";
+import { Slide, ToastContainer, Zoom, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -14,23 +14,31 @@ function App() {
 
   function handleTaskSubmit(yeniTask) {
     setTasks([yeniTask, ...tasks]);
-    toast.success("Görev başarıyla eklendi");
+    toast.success(
+      "Yeni Görev : " +
+        "'" +
+        yeniTask.title +
+        "'" +
+        " başarılı bir şekilde eklendi"
+    );
   }
 
   function handlePeopleSubmit(yeniKisi) {
     setTeam([...team, yeniKisi]);
-    toast.success("Yeni kişi başarıyla eklendi");
+    toast.success(yeniKisi + ", ekibe katıldı.");
   }
 
   function handleComplete(id) {
     const copyTasks = [...tasks];
+    let title = "";
     copyTasks.map((task) => {
       if (task.id === id) {
         task.status = "yapıldı";
+        title = task.title;
       }
     });
     setTasks(copyTasks);
-    toast.success("Görev tamamlandı");
+    toast.success("Tebrikler!, " + title + " görevini tamaladın");
   }
 
   return (
@@ -72,11 +80,10 @@ function App() {
         </div>
       </div>
       <ToastContainer
-        style={{}}
-        position="bottom-center"
+        position="top-right"
         theme="colored"
-        autoClose={500}
-        transition={Zoom}
+        autoClose={2000}
+        transition={Slide}
         hideProgressBar={true}
       />
     </>
