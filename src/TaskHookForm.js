@@ -23,6 +23,7 @@ export default function TaskHookForm({ kisiler, submitFn }) {
 
   function onSubmitHandler(formData) {
     console.log("form data : ", formData);
+
     submitFn({
       ...formData,
       id: nanoid(5),
